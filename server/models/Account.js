@@ -33,6 +33,10 @@ const AccountSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  email: {
+    type: String,
+    required: true,
+  },
   createdDate: {
     type: Date,
     default: Date.now,
@@ -42,6 +46,7 @@ const AccountSchema = new mongoose.Schema({
 // Converts a doc to something we can store in redis later on.
 AccountSchema.statics.toAPI = (doc) => ({
   username: doc.username,
+  email: email,
   _id: doc._id,
 });
 

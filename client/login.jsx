@@ -24,9 +24,10 @@ const handleSignup = (e) => {
     const username = e.target.querySelector('#user').value;
     const pass = e.target.querySelector('#pass').value;
     const pass2 = e.target.querySelector('#pass2').value;
+    const email = e.target.querySelector('#email').value;
     const _csrf = e.target.querySelector('#_csrf').value;
 
-    if (!username || !pass || !pass2) {
+    if (!username || !pass || !pass2 || !email) {
         helper.handleError('All fields are required!');
         return false;
     }
@@ -36,7 +37,7 @@ const handleSignup = (e) => {
         return false;
     }
 
-    helper.sendPost(e.target.action, { username, pass, pass2, _csrf });
+    helper.sendPost(e.target.action, { username, pass, pass2, email, _csrf });
     return false;
 };
 
@@ -74,6 +75,8 @@ const SignupWindow = (props) => {
             <input type="password" name="pass" id="pass" placeholder='password' />
             <label htmlFor="pass2">Password: </label>
             <input type="password" name="pass2" id="pass2" placeholder='retype password' />
+            <label htmlFor="email">Email: </label>
+            <input type="email" name='email' id='email' placeholder='example@example.com'/>
             <input type="hidden" name="_csrf" id="_csrf" value={props.csrf} />
             <input type="submit" className='formSubmit' value="Sign in" />
         </form>
