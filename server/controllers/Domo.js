@@ -6,7 +6,7 @@ const { Domo } = require('../models');
  * @param {Express.Response} res The server response.
  */
 function makerPage(req, res) {
-  return res.render('app', {accountName: req.session.account.username, email: req.session.account.email});
+  return res.render('app', { accountName: req.session.account.username, email: req.session.account.email });
 }
 
 /**

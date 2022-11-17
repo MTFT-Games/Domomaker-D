@@ -109,6 +109,37 @@ nav:nth-child(1) {
     text-align: right;
     font-size: 1.2em;
 }
+.resetForm {
+    height: 300px;
+    width: 450px;
+    margin: 0 auto;
+    padding-top: 350px;
+    font-size: 1.2em;
+}
+
+.resetForm label {
+    display: inline-block;
+    width: 210px;
+    margin-right: 10px;
+    text-align: right;
+    font-size: 1.2em;
+}
+
+.resetSubmit {
+    transition: background-color 0.4s ease;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 14px;
+    font-size: 1.2em;
+    width: 200px;
+    background-color: #55acee;
+    border-radius: 2px;
+    border-color: #66acee;
+    padding: 3px 0px;
+    color: white;
+    text-decoration: none;
+}
 
 .formSubmit {
     transition: background-color 0.4s ease;
@@ -135,7 +166,7 @@ nav:nth-child(1) {
     background-color: #338acc;
 }
 
-#user, #pass, #pass2 {
+#user, #pass, #pass2, #pass3, #email {
     text-align: center;
     font-size: 1.1em;
     width: 180px;

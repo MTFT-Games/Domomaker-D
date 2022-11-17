@@ -19,6 +19,9 @@ function router(app) {
   app.get('/getToken', mid.requiresSecure, controllers.Account.getToken);
   app.get('/getDomos', mid.requiresLogin, controllers.Domo.getDomos);
 
+  app.get('/pass-reset', mid.requiresLogin, mid.requiresSecure, controllers.Account.resetPage);
+  app.post('/pass-reset', mid.requiresLogin, mid.requiresSecure, controllers.Account.resetPass);
+
   app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
 }
 
